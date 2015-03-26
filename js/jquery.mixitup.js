@@ -1926,8 +1926,8 @@
 		 */
 		
 		forceRefresh: function(){
+                        
 			var self = this;
-			
 			self._refresh(false, true);
 		},
 		

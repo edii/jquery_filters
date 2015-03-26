@@ -2678,7 +2678,7 @@ min-height: 580px;
 padding: 15px;
 overflow: hidden;
 }
-.sandbox .mix {
+.sandbox .mix, .sandbox .content .mix {
 -webkit-transform-style: preserve-3d;
 -moz-transform-style: preserve-3d;
 -ms-transform-style: preserve-3d;
@@ -2695,14 +2695,15 @@ font-weight: 400;
 color: rgba(255, 255, 255, 0.9);
 vertical-align: top;
 -webkit-backface-visibility: hidden;
+margin-right: 10px;
 }
-.sandbox .mix:before {
+.sandbox .mix:before, .sandbox .content .mix:before {
 content: '';
 display: inline-block;
 padding-top: 60%;
 vertical-align: middle;
 }
-.sandbox .mix:after {
+.sandbox .mix:after, .sandbox .content .mix:after {
 content: '';
 position: absolute;
 border: 20px solid transparent;
@@ -2714,21 +2715,23 @@ left: -20px;
 -ms-transform: rotate(45deg);
 transform: rotate(45deg);
 }
-.sandbox .mix.category-1:after {
+.sandbox .mix.category-1:after,
+.sandbox .content .mix.category-1:after {
 border-right-color: #6bd2e8;
 }
-.sandbox .mix.category-2:after {
+.sandbox .mix.category-2:after,
+.sandbox .content .mix.category-2:after {
 border-right-color: #a6e6a7;
 }
-.sandbox .gap,
-.sandbox .mix {
+.sandbox .gap, .sandbox .content .gap,
+.sandbox .mix, .sandbox .content .mix {
 width: 48%;
 }
-.sandbox.list .mix {
+.sandbox.list .mix, .sandbox.list .content .mix {
 width: 100%;
 background: rgba(255, 255, 255, 0.3);
 }
-.sandbox.list .mix:before {
+.sandbox.list .mix:before, .sandbox.list .content .mix:before {
 padding-top: 3%;
 }
 .sandbox.pagination {
@@ -2736,21 +2739,24 @@ min-height: 0;
 background: #6bd2e8;
 padding: 15px;
 }
-.sandbox.pagination .mix {
+.sandbox.pagination .mix, .sandbox.pagination .content .mix {
 margin-bottom: 4%;
 width: 48%;
 }
-.sandbox.pagination .mix:before {
+.sandbox.pagination .mix:before, .sandbox.pagination .content .mix:before {
 padding-top: 45%;
 }
-.sandbox.pagination .mix.category-1:after {
+.sandbox.pagination .mix.category-1:after,
+.sandbox.pagination .content .mix.category-1:after {
 border-right-color: #3fc5e1;
 }
-.sandbox.pagination .mix.category-2:after {
+.sandbox.pagination .mix.category-2:after,
+.sandbox.pagination .content .mix.category-2:after {
 border-right-color: #92e094;
 }
 @media all and (min-width: 641px) {
-.sandbox.pagination .mix {
+.sandbox.pagination .mix,
+.sandbox.pagination .content .mix {
 width: 23.5%;
 margin-bottom: 0;
 }
@@ -2845,14 +2851,18 @@ box-shadow: inset 0 -50px 30px -35px #01292e;
 transform: translateX(-320px);
 }
 @media all and (min-width: 641px) {
-.sandbox .mix {
+.sandbox .mix,
+.sandbox .content .mix {
 margin-bottom: 2%;
 }
-.sandbox .mix:before {
+.sandbox .mix:before,
+.sandbox .content .mix:before {
 padding-top: 80%;
 }
 .sandbox .gap,
-.sandbox .mix {
+.sandbox .mix,
+.sandbox .content .gap,
+.sandbox .content .mix {
 width: 23.5%;
 }
 }
@@ -2860,11 +2870,14 @@ width: 23.5%;
 .sandbox {
 padding: 30px 30px 0;
 }
-.sandbox .mix:before {
+.sandbox .mix:before,
+.sandbox .content .mix:before {
 padding-top: 45%;
 }
 .sandbox .gap,
-.sandbox .mix {
+.sandbox .mix,
+.sandbox .content .gap,
+.sandbox .content .mix {
 width: 23.5%;
 }
 }
@@ -2891,7 +2904,8 @@ perspective: 3000;
 -ms-perspective-origin: 50%;
 perspective-origin: 50%;
 }
-#Demo1 .mix {
+#Demo1 .mix,
+#Demo1 .content .mix {
 -webkit-transform: translateZ(0);
 -moz-transform: translateZ(0);
 -ms-transform: translateZ(0);
@@ -2918,13 +2932,16 @@ transform-style: preserve-3d;
 transform-origin: 100% 0;
 }
 #Demo1 .mix:before,
-#Demo1 .mix:after {
+#Demo1 .mix:after,
+#Demo1 .content .mix:before,
+#Demo1 .content .mix:after {
 display: block;
 content: '';
 position: absolute;
 background: rgba(157, 216, 217, 0.5);
 }
-#Demo1 .mix:before {
+#Demo1 .mix:before,
+#Demo1 .content .mix:before {
 height: 70px;
 width: 80px;
 left: 0;
@@ -2939,7 +2956,8 @@ transform: rotateY(90deg);
 -ms-transform-origin: 0 0;
 transform-origin: 0 0;
 }
-#Demo1 .mix:after {
+#Demo1 .mix:after,
+#Demo1 .content .mix:after {
 content: '';
 height: 80px;
 width: 100%;
@@ -3908,4 +3926,9 @@ width: auto;
 .grid.replies .no {
 font-size: 25px;
 }
+}
+
+#SandBox .content {
+    width: 100%;
+/*    height: 100%;*/
 }

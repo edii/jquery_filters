@@ -123,6 +123,14 @@ $(document).ready(function(){
     /* ---- init scrollPagination ---- */
     if($('#SandBox').length) {
 
+//        $('#SandBox').mixItUp({
+//                    selectors: {
+//                        target: '.content .mix',
+//                        filter: '.filter',
+//                        sort: '.sort'
+//                    },
+//                });
+
         $('#SandBox').scrollPagination({
 
             nop     : 10,
@@ -133,11 +141,7 @@ $(document).ready(function(){
             item    : '.content > .mix',
             data    : { },
             _callback: function(elements, data) {
-                $('#SandBox').mixItUp('selectors', {
-                    target: '.content .mix',
-                    filter: '.filter',
-                    sort: '.sort'
-                });
+                //$('#SandBox').mixItUp('forceRefresh');
             },
             nojson  : false
 

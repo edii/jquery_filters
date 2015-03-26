@@ -1,0 +1,9 @@
+.loading-bar {
+    background: none repeat scroll 0 0 #ccc;
+    display: block;
+    height: 60px;
+    margin: 0 auto;
+    text-align: center;
+    width: 30%;
+    z-index: 10000;
+}

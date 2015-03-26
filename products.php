@@ -26,9 +26,14 @@ $_products = array_merge( $_products, $_arr );
 //var_dump( $request, $request['nojson'] );
 //echo "</pre>";
 
-if(isset($request['nojson']) and $request['nojson'] == 'true') {
+if(isset($request['nojson']) and $request['nojson'] == 'false') {
     header('Content-Type: application/json');
-    echo json_encode( array('result' => $_products) );
+    $_data = false;
+    if($request['offset'] <= count($_products)) {
+        $_data = array_splice($_products, (int)$request['offset'], (int)$request['number']);
+    }
+    
+    echo json_encode( array('result' => $_data) );
 } else {    
     header('Content-Type: text/html');
     $_html = '';
