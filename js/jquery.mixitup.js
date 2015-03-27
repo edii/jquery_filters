@@ -1958,7 +1958,38 @@
 			self._execAction('destroy', 1, arguments);
 			
 			delete $.MixItUp.prototype._instances[self._id];
-		}
+		},
+                
+                targets: function() {
+                    var self = this;
+                   
+                    self._refresh(true);
+                   // self._cleanUp();
+                    
+//                    self._$targets.css( self.layout.display );
+//                    self._activeFilter = self.load.filter === 'all' ? 
+//				self.selectors.target : 
+//				self.load.filter === 'none' ?
+//					'' :
+//					self.load.filter;
+                    self._buildState();
+                    //self._updateControls();
+                    self._filter();
+                    self._setFinal();
+                    
+                    self._$targets.css('display',self.layout.display);
+                    self._$show.css('display',self.layout.display);
+                    
+                    // self._sort();
+                    
+                    // self._buildState();
+                    // self._filter();
+                    //self._setInter();
+
+                    
+
+                    console.log( self._$targets );
+                }
 		
 	};
 	
@@ -1994,6 +2025,7 @@
 			};
 			
 		eachReturn = this.each(function(){
+                        
 			if(args && typeof args[0] === 'string'){
 				var instance = $.MixItUp.prototype._instances[this.id];
 				if(args[0] === 'isLoaded'){
